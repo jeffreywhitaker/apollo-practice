@@ -1,15 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
-
-const EXCHANGE_RATES = gql`
-  {
-    rates(currency: "USD") {
-      currency
-      rate
-    }
-  }
-`;
+import { EXCHANGE_RATES } from '../Queries/queries'
 
 function ExchangeRates() {
   const { loading, error, data } = useQuery(EXCHANGE_RATES);
